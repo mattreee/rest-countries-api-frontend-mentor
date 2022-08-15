@@ -1,8 +1,15 @@
+import { NavigationStyles } from "./navigation.styled";
+
 const index = () => {
 	return (
 		<header>
-			<h1>Where in the world?</h1>
-			<button>Dark Mode</button>
+			<NavigationStyles>
+				<h1 className="nav__title">Where in the world?</h1>
+				<div className="nav__theme-button">
+					<span className="material-symbols-outlined">dark_mode</span>
+					Dark Mode
+				</div>
+			</NavigationStyles>
 		</header>
 	);
 };

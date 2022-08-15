@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 const theme = {
    dark: {
       backgroundColor: "hsl(207, 26%, 17%)",
@@ -17,4 +19,11 @@ const theme = {
    }
 }
 
-export { theme };
+const Container = styled.div`
+		background-color: ${(props) => props.theme.dark.backgroundColor};
+		color: ${(props) => props.theme.dark.color};
+		font-size: ${(props) => props.theme.fontSize.default};
+		min-height: 100vh;
+	`;
+
+export { theme, Container };
