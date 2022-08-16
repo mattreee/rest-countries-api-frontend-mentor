@@ -6,8 +6,12 @@ export const FilterStyles = styled.div`
    border-radius: 7px;
    position: relative;
    cursor: pointer;
-
    box-shadow: 0 1px 3px 0 rgba(0,0,0, .2);
+
+   .filter__option {
+      display: flex;
+      align-items: center;
+   }
 
    .filter__text {
       margin-right: 1rem;

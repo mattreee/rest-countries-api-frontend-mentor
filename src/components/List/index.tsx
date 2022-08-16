@@ -1,6 +1,5 @@
 import { useCountries } from "../../State";
 import ListItem from "../ListItem";
-
 import { ListStyles } from "./list.styled";
 
 const Index = () => {

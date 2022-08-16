@@ -1,18 +1,11 @@
 import { ListItemStyles } from "./listitem.styled";
 import { useDarkTheme } from "../../State";
+import { themeElements } from "../theme/themeElements.styled";
 
 const Index = ({ name, capital, region, population, flag }: any) => {
 	const { darkTheme } = useDarkTheme();
 
-	const theme = darkTheme
-		? {
-				backgroundColor: "hsl(209, 23%, 22%)",
-				color: "white",
-		  }
-		: {
-				backgroundColor: "hsl(0, 0%, 98%)",
-				color: "hsl(200, 15%, 8%)",
-		  };
+	const theme = darkTheme ? themeElements.dark : themeElements.light;
 
 	return (
 		<ListItemStyles theme={theme}>

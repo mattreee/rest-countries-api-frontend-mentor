@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const NavigationStyles = styled.nav`
-   background-color: ${props => props.theme};
+   background-color: ${props => props.theme.backgroundColor};
+   color: ${props => props.theme.color};
    display: flex;
    justify-content: space-between;
    align-items: center;

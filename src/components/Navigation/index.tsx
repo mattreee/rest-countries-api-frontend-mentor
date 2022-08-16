@@ -1,5 +1,6 @@
 import { NavigationStyles } from "./navigation.styled";
 import { useDarkTheme } from "../../State";
+import { themeElements } from "../theme/themeElements.styled";
 
 const Index = () => {
 	const { darkTheme, setDarkTheme } = useDarkTheme();
@@ -8,7 +9,7 @@ const Index = () => {
 		setDarkTheme((prevState: any) => !prevState);
 	};
 
-	const theme = darkTheme ? "hsl(207, 26%, 17%)" : "hsl(0, 0%, 98%)";
+	const theme = darkTheme ? themeElements.dark : themeElements.light;
 
 	return (
 		<header>
