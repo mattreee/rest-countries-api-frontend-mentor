@@ -1,21 +1,10 @@
-import { useState, useEffect } from "react";
-import { api } from "../../service/api";
+import { useCountries } from "../../State";
 import ListItem from "../ListItem";
 
 import { ListStyles } from "./list.styled";
 
 const Index = () => {
-	const [countries, setCountries] = useState([]);
-
-	const getData = async (endpoint: string) => {
-		const res = await api.get(`${endpoint}`);
-		const data = await res.data;
-		setCountries(data);
-	};
-
-	useEffect(() => {
-		getData("all");
-	}, []);
+	const { countries } = useCountries();
 
 	return (
 		<ListStyles>
