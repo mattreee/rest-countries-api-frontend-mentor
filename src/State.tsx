@@ -5,7 +5,7 @@ const ContextContainer = createContext({});
 
 export function StateContainer({ children }: any) {
 	const [countries, setCountries] = useState([]);
-	const [darkTheme, setDarkTheme] = useState(false);
+	const [darkTheme, setDarkTheme] = useState(true);
 
 	const getData = async (endpoint: string) => {
 		const res = await api.get(`${endpoint}`);
@@ -15,7 +15,7 @@ export function StateContainer({ children }: any) {
 
 	useEffect(() => {
 		getData("all");
-	});
+	}, []);
 
 	const contextValue = {
 		countries,

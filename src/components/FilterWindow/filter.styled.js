@@ -27,6 +27,7 @@ export const FilterStyles = styled.div`
       top: calc(100% + .2rem);
       left: 0;
       border-radius: 5px;
+      text-transform: capitalize;
 
       box-shadow: 2px 1px 7px 0 rgba(0,0,0, .1);
    }
