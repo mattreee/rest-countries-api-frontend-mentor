@@ -7,6 +7,8 @@ export const FilterStyles = styled.div`
    position: relative;
    cursor: pointer;
 
+   box-shadow: 0 1px 3px 0 rgba(0,0,0, .2);
+
    .filter__text {
       margin-right: 1rem;
       font-weight: 600;
@@ -21,6 +23,8 @@ export const FilterStyles = styled.div`
       top: calc(100% + .2rem);
       left: 0;
       border-radius: 5px;
+
+      box-shadow: 2px 1px 7px 0 rgba(0,0,0, .1);
    }
 
    .filter__drop-option {
