@@ -1,17 +1,19 @@
 import styled from "styled-components";
 
 export const NavigationStyles = styled.nav`
-   background-color: hsl(209, 23%, 22%);
+   background-color: ${props => props.theme};
    display: flex;
    justify-content: space-between;
    align-items: center;
-   padding: 1em 7vw;
+   padding: 2em 7vw;
+
+   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, .1);
 
    .nav__theme-button {
       font-weight: 600;
       display: flex;
       align-items: center;
       gap: .5rem;
-      fill: white;
+      cursor: pointer;
    }
 `;

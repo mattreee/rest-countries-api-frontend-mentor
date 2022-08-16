@@ -1,13 +1,16 @@
 import Theme from "./components/theme";
 import Navigation from "./components/Navigation";
 import Main from "./components/Main";
+import { StateContainer } from "./State";
 
 function App() {
 	return (
-		<Theme>
-			<Navigation />
-			<Main />
-		</Theme>
+		<StateContainer>
+			<Theme>
+				<Navigation />
+				<Main />
+			</Theme>
+		</StateContainer>
 	);
 }
 
