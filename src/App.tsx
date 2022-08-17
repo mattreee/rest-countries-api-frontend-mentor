@@ -2,15 +2,18 @@ import Theme from "./components/theme";
 import Navigation from "./components/Navigation";
 import Main from "./components/Main";
 import { StateContainer } from "./State";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
 	return (
-		<StateContainer>
-			<Theme>
-				<Navigation />
-				<Main />
-			</Theme>
-		</StateContainer>
+		<BrowserRouter>
+			<StateContainer>
+				<Theme>
+					<Navigation />
+					<Main />
+				</Theme>
+			</StateContainer>
+		</BrowserRouter>
 	);
 }
 

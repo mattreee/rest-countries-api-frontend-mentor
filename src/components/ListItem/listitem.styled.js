@@ -3,8 +3,14 @@ import styled from "styled-components";
 export const ListItemStyles = styled.li`
    background-color: ${props => props.theme.backgroundColor};
    width: fit-content;
-   border-radius: 0 0 7px 7px;
    box-shadow: 0 5px 5px 0 rgba(0,0,0, .2);
+   border-radius: 0 0 7px 7px;
+   cursor: pointer;
+   transition: 100ms;
+
+   &:hover {
+      transform: scale(1.02);
+   }
    
    img {
       max-width: 250px;
