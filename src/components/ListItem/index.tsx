@@ -10,8 +10,6 @@ const Index = ({ name, capital, region, population, flag }: any) => {
 	const { setDetailData } = useDetailData();
 	const navigate = useNavigate();
 
-	const theme = darkTheme ? themeElements.dark : themeElements.light;
-
 	const getDetailData = async (country: string) => {
 		const res = await api.get(`name/${country}`);
 		const data = res.data;
@@ -22,6 +20,8 @@ const Index = ({ name, capital, region, population, flag }: any) => {
 		getDetailData(name);
 		navigate(`${name.toLowerCase()}`);
 	};
+
+	const theme = darkTheme ? themeElements.dark : themeElements.light;
 
 	return (
 		<ListItemStyles theme={theme} onClick={handleDetailClick}>
