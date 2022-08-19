@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const CountryStyles = styled.section`
+   font-size: 16px;
    display: flex;
    flex-direction: column;
 

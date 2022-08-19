@@ -1,15 +1,14 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { CountryStyles } from "./country.styled";
 import { useDetailData } from "../../State";
 import { api } from "../../service/api";
+import BackButton from "../BackButton";
 import BorderItem from "../BorderItem";
 
 function Index() {
 	const { country } = useParams();
 	const { detailData, setDetailData } = useDetailData();
-	const navigate = useNavigate();
 
 	const getDetailData = async (country: any) => {
 		const res = await api.get(`name/${country}`);
@@ -26,7 +25,7 @@ function Index() {
 
 	return (
 		<CountryStyles>
-			<button onClick={() => navigate("/")}>Back</button>
+			<BackButton />
 			<div className="country__description">
 				<img src={detailData[0]?.flags.svg} alt="country flag" />
 				<div>
@@ -84,7 +83,7 @@ function Index() {
 					</div>
 					<p>
 						Border Countries:{" "}
-						{detailData[0]?.borders.map((elem: any) => {
+						{detailData[0]?.borders?.map((elem: any) => {
 							return <BorderItem key={elem} alpha={elem} />;
 						})}
 					</p>

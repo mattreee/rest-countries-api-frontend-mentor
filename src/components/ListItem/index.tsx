@@ -4,11 +4,13 @@ import { useDetailData } from "../../State";
 import { themeElements } from "../theme/themeElements.styled";
 import { api } from "../../service/api";
 import { useNavigate } from "react-router-dom";
+import { useShowSearch } from "../../State";
 
 const Index = ({ name, capital, region, population, flag }: any) => {
 	const { darkTheme } = useDarkTheme();
 	const { setDetailData } = useDetailData();
 	const navigate = useNavigate();
+	const { setShowSearch } = useShowSearch();
 
 	const getDetailData = async (country: string) => {
 		const res = await api.get(`name/${country}`);
@@ -18,6 +20,7 @@ const Index = ({ name, capital, region, population, flag }: any) => {
 
 	const handleDetailClick = () => {
 		getDetailData(name);
+		setShowSearch(false);
 		navigate(`${name.toLowerCase()}`);
 	};
 
