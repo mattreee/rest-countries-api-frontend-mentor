@@ -4,7 +4,7 @@ import { BorderItemStyles } from "./borderitem.styled";
 import { useDarkTheme } from "../../State";
 import { themeElements } from "../theme/themeElements.styled";
 
-function Index({ alpha }: any) {
+function Index({ alpha, setDetailData }: any) {
 	const [alphaName, setAlphaName] = useState();
 	const { darkTheme } = useDarkTheme();
 
@@ -14,6 +14,16 @@ function Index({ alpha }: any) {
 		setAlphaName(data[0]?.name.common);
 	};
 
+	const getDetailData = async (country: any) => {
+		const res = await api.get(`name/${country}`);
+		const data = res.data;
+		setDetailData(data);
+	};
+
+	const handleClick = () => {
+		getDetailData(alphaName);
+	};
+
 	useEffect(() => {
 		getDataByAlpha(alpha);
 		// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -21,7 +31,11 @@ function Index({ alpha }: any) {
 
 	const theme = darkTheme ? themeElements.dark : themeElements.light;
 
-	return <BorderItemStyles theme={theme}>{alphaName}</BorderItemStyles>;
+	return (
+		<BorderItemStyles theme={theme} onClick={handleClick}>
+			{alphaName}
+		</BorderItemStyles>
+	);
 }
 
 export default Index;

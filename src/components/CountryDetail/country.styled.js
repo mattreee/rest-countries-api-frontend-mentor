@@ -12,7 +12,6 @@ const CountryStyles = styled.section`
 
       &__flag {
          max-width: 40vw;
-         aspect-ratio: 1.3 / 1;
       }
 
       &__desc {
