@@ -26,7 +26,10 @@ const Index = () => {
 			)}
 			<Routes>
 				<Route path="/" element={<List searchInput={searchInput} />} />
-				<Route path=":country" element={<CountryDetail />} />
+				<Route
+					path=":country"
+					element={<CountryDetail setSearchInput={setSearchInput} />}
+				/>
 				<Route path="*" element={<ErrorPage />} />
 			</Routes>
 		</MainStyles>

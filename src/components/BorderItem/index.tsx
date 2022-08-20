@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
 import { api } from "../../service/api";
+import { BorderItemStyles } from "./borderitem.styled";
+import { useDarkTheme } from "../../State";
+import { themeElements } from "../theme/themeElements.styled";
 
 function Index({ alpha }: any) {
 	const [alphaName, setAlphaName] = useState();
+	const { darkTheme } = useDarkTheme();
 
 	const getDataByAlpha = async (alpha: string) => {
 		const res = await api.get(`alpha/${alpha}`);
@@ -15,7 +19,9 @@ function Index({ alpha }: any) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	return <span>{alphaName}</span>;
+	const theme = darkTheme ? themeElements.dark : themeElements.light;
+
+	return <BorderItemStyles theme={theme}>{alphaName}</BorderItemStyles>;
 }
 
 export default Index;
