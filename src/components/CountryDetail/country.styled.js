@@ -6,14 +6,16 @@ const CountryStyles = styled.section`
    flex-direction: column;
 
    .country{
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 5rem;
       margin-bottom: 10rem;
+      align-items: center;
 
       &__flag {
-         max-width: 40vw;
+         width: 100%;
       }
-
+      
       &__desc {
          width: 100%;
          display: grid;

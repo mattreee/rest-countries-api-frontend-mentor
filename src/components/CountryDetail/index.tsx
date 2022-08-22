@@ -27,11 +27,13 @@ function Index({ setSearchInput }: any) {
 		<CountryStyles>
 			<BackButton setSearchInput={setSearchInput} />
 			<div className="country">
-				<img
-					className="country__flag"
-					src={detailData[0]?.flags.svg}
-					alt="country flag"
-				/>
+				<div>
+					<img
+						className="country__flag"
+						src={detailData[0]?.flags.png}
+						alt="country flag"
+					/>
+				</div>
 				<div className="country__desc">
 					<h1 className="country__desc-title">{detailData[0]?.name.common}</h1>
 					<div className="country__desc-col-one country__desc-col">
