@@ -12,6 +12,13 @@ const CountryStyles = styled.section`
       margin-bottom: 10rem;
       align-items: center;
 
+      @media screen and (max-width: 800px) {
+         grid-template-columns: 1fr;
+         gap: 0;
+         margin: 0;
+         margin-bottom: 5rem;
+      }
+
       &__flag {
          width: 100%;
       }
@@ -25,10 +32,22 @@ const CountryStyles = styled.section`
             "border-countries border-countries border-countries";
          grid-template-rows: 1fr 2fr 1fr;
 
+         @media screen and (max-width: 800px) {
+            grid-template-areas: 
+               "title"
+               "column-one"
+               "column-two"
+               "border-countries";
+         }
+
          &-title {
             font-size: 2rem;
             grid-area: title;
             align-self: end;
+
+            @media screen and (max-width: 800px) {
+               margin: 2rem 0;
+            }
          }
 
          &-col {
@@ -36,6 +55,10 @@ const CountryStyles = styled.section`
             display: flex;
             flex-direction: column;
             gap: .5rem;
+
+            @media screen and (max-width: 800px) {
+               margin: 0;
+            }
          }
          
          &-col-one {
@@ -56,6 +79,17 @@ const CountryStyles = styled.section`
             flex-flow: wrap;
             align-items: center;
             gap: .5rem;
+
+            @media screen and (max-width: 800px) {
+               margin-top: 2rem;
+            }
+         }
+
+         @media screen and (max-width: 800px) {
+            .borders {
+               display: inline-block;
+               width: 100%;
+            }
          }
       }
    }

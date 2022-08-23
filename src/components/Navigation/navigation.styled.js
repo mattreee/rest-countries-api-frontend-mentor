@@ -16,5 +16,15 @@ export const NavigationStyles = styled.nav`
       align-items: center;
       gap: .5rem;
       cursor: pointer;
+
+      @media screen and (max-width: 800px) {
+         font-size: .8rem;
+      }
+   }
+
+   @media screen and (max-width: 800px) {
+      .nav__title {
+         font-size: 1rem;
+      }
    }
 `;

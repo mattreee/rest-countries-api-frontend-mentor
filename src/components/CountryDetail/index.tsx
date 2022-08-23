@@ -103,7 +103,9 @@ function Index({ setSearchInput }: any) {
 						</p>
 					</div>
 					<p className="country__desc-borders">
-						<span className="country__desc-category">Border Countries:</span>{" "}
+						<span className="country__desc-category borders">
+							Border Countries:
+						</span>{" "}
 						{detailData[0]?.borders?.map((elem: any) => {
 							return (
 								<BorderItem

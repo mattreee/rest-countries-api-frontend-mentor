@@ -7,6 +7,10 @@ export const FilterStyles = styled.div`
    position: relative;
    cursor: pointer;
    box-shadow: 0 1px 3px 0 rgba(0,0,0, .2);
+   
+   @media screen and (max-width: 800px) {
+      align-self: flex-start;
+   }
 
    .filter__option {
       display: flex;
@@ -24,7 +28,7 @@ export const FilterStyles = styled.div`
       background-color: ${props => props.theme.backgroundColor};
       width: 100%;
       padding: 1em 0;
-      top: calc(100% + .2rem);
+      top: calc(100% + .05rem);
       left: 0;
       border-radius: 5px;
       text-transform: capitalize;
